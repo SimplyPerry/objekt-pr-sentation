@@ -7,3 +7,10 @@ def test_hent_cats(client: CatsClient):
 
     assert response is not None
     assert len(response["data"]) == 1
+
+def test_hent_flere_facts(client: CatsClient):
+    amount_of_facts_wanted = 5
+    response = client.get_multiple_facts(amount_of_facts_wanted)
+
+    assert response is not None
+    assert len(response["data"]) == 5

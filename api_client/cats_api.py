@@ -16,5 +16,13 @@ class CatsClient:
         response = httpx.get(url)
         response.raise_for_status()
         return response.json()
+    
+    def get_multiple_facts(self, amount_of_facts:int):
+        endpoint = f"/facts?limit={amount_of_facts}"
+        url = f"{self.base_url.rstrip('/')}{endpoint}"
+
+        response = httpx.get(url)
+        response.raise_for_status()
+        return response.json()
 
         
