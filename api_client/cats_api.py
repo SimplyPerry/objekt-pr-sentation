@@ -25,6 +25,8 @@ class CatsClient:
         endpoint = f"/facts?limit={amount_of_facts}"
         url = f"{self.base_url.rstrip('/')}{endpoint}"
 
+        test = "test"
+
         response = httpx.get(url)
         response.raise_for_status()
         return response.json()
