@@ -18,6 +18,10 @@ class CatsClient:
         return response.json()
     
     def get_multiple_facts(self, amount_of_facts:int):
+        """
+        Henter antal fakta omkring hunde, defineret i amounts_of_facts
+        """
+
         endpoint = f"/facts?limit={amount_of_facts}"
         url = f"{self.base_url.rstrip('/')}{endpoint}"
 
